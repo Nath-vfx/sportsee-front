@@ -1,0 +1,13 @@
+.App {
+    &__content {
+        display: flex;
+    }
+    &__test {
+        background: red;
+    }
+    &__side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
