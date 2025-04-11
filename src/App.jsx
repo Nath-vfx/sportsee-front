@@ -4,6 +4,8 @@ import SideBar from "./components/SideBar/SideBar.jsx";
 import Container from "./components/Container/Container.jsx";
 import Panel from "./components/Panel/Panel.jsx";
 import CounterCard from "./components/CounterCard/CounterCard.jsx";
+import PerDayActivity from "./components/PerDayActivity/PerDayActivity.jsx";
+import DomainsRadar from "./components/DomainsRadar/DomainsRadar.jsx";
 
 import energy from "./assets/energy.svg";
 import cheeseburger from "./assets/cheeseburger.svg";
@@ -24,7 +26,9 @@ function App() {
             text="Félicitation ! Vous avez explosé vos objectifs hier 👏"
           />
           <Panel>
-            <div className={styles.App__test}></div>
+            <div>
+              <PerDayActivity />
+            </div>
             <div className={styles.App__side}>
               <CounterCard number="1,930kCal" type="Calories" icon={energy} />
               <CounterCard number="155g" type="Proteines" icon={chicken} />
@@ -32,7 +36,9 @@ function App() {
               <CounterCard number="50g" type="Lipides" icon={cheeseburger} />
             </div>
             <div className={styles.App__test}></div>
-            <div className={styles.App__test}></div>
+            <div className={styles.App__test}>
+              <DomainsRadar />
+            </div>
             <div className={styles.App__test}></div>
           </Panel>
         </Container>
