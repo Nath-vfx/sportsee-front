@@ -5,6 +5,18 @@
     &__test {
         background: red;
     }
+    &__activity {
+        background-color: $offwhite;
+    }
+    &__duration {
+        background-color: red;
+    }
+    &__domains {
+        background-color: $base-color;
+    }
+    &__score {
+        background-color: $offwhite;
+    }
     &__side {
         display: flex;
         flex-direction: column;

@@ -6,6 +6,7 @@ import Panel from "./components/Panel/Panel.jsx";
 import CounterCard from "./components/CounterCard/CounterCard.jsx";
 import PerDayActivity from "./components/PerDayActivity/PerDayActivity.jsx";
 import DomainsRadar from "./components/DomainsRadar/DomainsRadar.jsx";
+import PieScore from "./components/PieScore/PieScore.jsx";
 
 import energy from "./assets/energy.svg";
 import cheeseburger from "./assets/cheeseburger.svg";
@@ -13,6 +14,7 @@ import chicken from "./assets/chicken.svg";
 import apple from "./assets/apple.svg";
 
 import styles from "./App.module.scss";
+import DurationChart from "@/components/DurationChart/DurationChart.jsx";
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
             text="Félicitation ! Vous avez explosé vos objectifs hier 👏"
           />
           <Panel>
-            <div>
+            <div className={styles.App__activity}>
               <PerDayActivity />
             </div>
             <div className={styles.App__side}>
@@ -35,11 +37,15 @@ function App() {
               <CounterCard number="290g" type="Glucides" icon={apple} />
               <CounterCard number="50g" type="Lipides" icon={cheeseburger} />
             </div>
-            <div className={styles.App__test}></div>
-            <div className={styles.App__test}>
+            <div className={styles.App__duration}>
+              <DurationChart/>
+            </div>
+            <div className={styles.App__domains}>
               <DomainsRadar />
             </div>
-            <div className={styles.App__test}></div>
+            <div className={styles.App__score}>
+              <PieScore/>
+            </div>
           </Panel>
         </Container>
       </div>
