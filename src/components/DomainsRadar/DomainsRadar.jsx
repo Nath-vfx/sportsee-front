@@ -7,47 +7,39 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    subject: "Math",
-    A: 120,
-    B: 110,
-    fullMark: 150,
-  },
-  {
-    subject: "Chinese",
-    A: 98,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "English",
-    A: 86,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "Geography",
-    A: 99,
-    B: 100,
-    fullMark: 150,
-  },
-  {
-    subject: "Physics",
-    A: 85,
-    B: 90,
-    fullMark: 150,
-  },
-  {
-    subject: "History",
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  },
-];
+// Reçoit les données de performance via la prop performance
+const KIND_TRANSLATION = {
+  1: "Cardio",
+  2: "Energie",
+  3: "Endurance",
+  4: "Force",
+  5: "Vitesse",
+  6: "Intensité",
+};
+
+function formatPerformanceData(performance) {
+  if (
+    !performance ||
+    !performance.data ||
+    !Array.isArray(performance.data.data) ||
+    !performance.data.kind
+  ) {
+    return [];
+  }
+  // Map chaque entrée pour avoir { subject, value }
+  return performance.data.data.map((item) => ({
+    subject:
+      KIND_TRANSLATION[item.kind] ||
+      performance.data.kind[item.kind] ||
+      item.kind,
+    value: item.value,
+  }));
+}
 
 export default class Example extends PureComponent {
   render() {
+    const data = formatPerformanceData(this.props.performance);
+
     return (
       <ResponsiveContainer>
         <RadarChart
@@ -61,7 +53,12 @@ export default class Example extends PureComponent {
         >
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" ticks={false} />
-          <Radar name="Mike" dataKey="A" fill="#f00" fillOpacity={0.6} />
+          <Radar
+            name="Performance"
+            dataKey="value"
+            fill="#f00"
+            fillOpacity={0.6}
+          />
         </RadarChart>
       </ResponsiveContainer>
     );

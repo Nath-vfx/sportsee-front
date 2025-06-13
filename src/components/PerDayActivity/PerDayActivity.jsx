@@ -12,55 +12,22 @@ import {
   Line,
 } from "recharts";
 
-const data = [
-  {
-    name: "1",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "2",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "3",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "4",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "5",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "6",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "7",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
+// Reçoit les données d'activité via la prop activity
 export default class Example extends PureComponent {
-  static demoUrl = "https://codesandbox.io/p/sandbox/simple-bar-chart-72d7y5";
-
   render() {
+    // Si activity est fourni et a la bonne structure, on l'utilise, sinon fallback sur un tableau vide
+    const data =
+      this.props.activity &&
+      this.props.activity.data &&
+      Array.isArray(this.props.activity.data.sessions)
+        ? this.props.activity.data.sessions.map((session, idx) => ({
+            name: (idx + 1).toString(),
+            uv: session.calories,
+            pv: session.kilogram,
+            amt: session.calories, // ou autre champ si besoin
+          }))
+        : [];
+
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart

@@ -4,6 +4,15 @@
     }
     &__test {
         background: red;
+        &__radar {
+            background-color: $base-color;
+        }
+        &__score {
+            background-color: $offwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
     &__side {
         display: flex;
