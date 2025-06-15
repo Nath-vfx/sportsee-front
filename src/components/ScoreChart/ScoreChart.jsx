@@ -45,8 +45,8 @@ const renderActiveShape = (props) => {
         dy={8}
         textAnchor="start"
         fill="#282D30"
-        fontSize={26}
-        fontWeight={900}
+        fontSize={20}
+        fontWeight={400}
         fontFamily="Roboto"
       >
         Score

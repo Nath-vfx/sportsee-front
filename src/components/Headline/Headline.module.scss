@@ -1,8 +1,8 @@
 .Headline {
     &__title {
-        font-size: 3rem;
+        font-size: 2.5rem; // Réduit légèrement la taille du titre
         font-weight: 500;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         &__accent {
             color: $accent-color;
         }

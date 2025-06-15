@@ -1,17 +1,41 @@
 .App {
     &__content {
         display: flex;
+        min-height: calc(100vh - 90px);
     }
     &__test {
-        background: red;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        height: 100%;
+        max-height: 250px; // Ajout d'une hauteur maximale
+
+        // Style commun pour tous les enfants directs
+        > div {
+            width: 100%;
+            height: 100%;
+            max-height: 250px; // Ajout d'une hauteur maximale pour chaque enfant
+            border-radius: 1rem;
+        }
+
+        // Premier div (LineChart)
+        > div:first-child {
+            background-color: red;
+        }
+
         &__radar {
             background-color: $base-color;
+            height: 100%;
+            max-height: 250px;
         }
+
         &__score {
             background-color: $offwhite;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100%;
+            max-height: 250px;
         }
     }
     &__activity {
@@ -30,5 +54,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 1rem;
     }
 }
