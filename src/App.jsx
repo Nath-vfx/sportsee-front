@@ -14,7 +14,7 @@ import cheeseburger from "./assets/cheeseburger.svg";
 import chicken from "./assets/chicken.svg";
 import apple from "./assets/apple.svg";
 import styles from "./App.module.scss";
-import UserFetcherQuery from "./components/fetcher/UserFetcherQuery.jsx";
+import UserFetcherWithMock from "./components/fetcher/UserFetcherWithMock.jsx";
 
 class App extends React.Component {
   render() {
@@ -24,7 +24,7 @@ class App extends React.Component {
         <div className={styles.App__content}>
           <SideBar />
           <Container>
-            <UserFetcherQuery>
+            <UserFetcherWithMock>
               {({ userData, performance, averageSessions, activity }) => {
                 // Vérification de la présence des données nécessaires
                 const userInfos = userData?.data?.userInfos;
@@ -79,7 +79,7 @@ class App extends React.Component {
                   </>
                 );
               }}
-            </UserFetcherQuery>
+            </UserFetcherWithMock>
           </Container>
         </div>
       </>
