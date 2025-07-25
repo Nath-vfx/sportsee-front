@@ -21,12 +21,12 @@ const renderActiveShape = (props) => {
   return (
     <g>
       <Rectangle
-        x={cx - 96}
-        y={cy - 96}
-        width={96 * 2}
-        height={96 * 2}
+        x={cx - 72}
+        y={cy - 72}
+        width={72 * 2}
+        height={72 * 2}
         fill="#FFFFFF"
-        radius={96}
+        radius={72}
         z={-2}
       />
       <Sector
@@ -40,8 +40,8 @@ const renderActiveShape = (props) => {
         fill={fill}
       />
       <text
-        x={24}
-        y={36}
+        x={12}
+        y={24}
         dy={8}
         textAnchor="start"
         fill="#282D30"
@@ -107,8 +107,8 @@ export default class Example extends PureComponent {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={96}
-            outerRadius={108}
+            innerRadius={72}
+            outerRadius={80}
             startAngle={0}
             fill="#f00"
             dataKey="value"
