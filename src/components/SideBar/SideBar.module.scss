@@ -1,0 +1,51 @@
+.SideBar {
+    height: calc(100vh - 92.5px);
+    background-color: $base-color;
+    width: max-content;
+    min-width: 70px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__nav {
+        justify-self: center;
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+    }
+    &__copyright {
+        color: white;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        min-width: 54px;
+        padding: 0.7rem 0.3rem;
+
+        &__nav__list {
+            gap: 0.7rem;
+        }
+        &__copyright {
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 700px) {
+        min-width: 44px;
+        padding: 0.3rem 0.1rem;
+
+        &__nav__list {
+            gap: 0.4rem;
+        }
+        &__copyright {
+            font-size: 0.7rem;
+        }
+    }
+}

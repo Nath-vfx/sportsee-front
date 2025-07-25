@@ -1,0 +1,42 @@
+.Panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 24px; // Réduit légèrement l'espace
+    width: 100%;
+    height: calc(100vh - 200px);
+    max-height: 680px; // Limite la hauteur maximale
+    padding: 1rem; // Ajout d'un padding pour éviter que le contenu touche les bords
+
+    div {
+        border-radius: 1rem;
+        min-width: 0; // Empêche le débordement des éléments
+    }
+    div:nth-child(1) {
+        grid-column: span 3 / span 3;
+        grid-row: span 3 / span 3;
+    }
+
+    div:nth-child(2) {
+        grid-row: span 5 / span 5;
+        grid-column-start: 4;
+    }
+
+    div:nth-child(3) {
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+    }
+
+    div:nth-child(4) {
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+    }
+
+    div:nth-child(5) {
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+    }
+    div.Radar {
+        background-color: $base-color;
+    }
+}
